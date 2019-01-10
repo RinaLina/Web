@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %} {% endblock %}
+
+{% block navbar-links %}
+
+    <ul class="nav navbar-nav">
+        <li><a href="/">< back to pictures</a>></li>
+    </ul>
+{% endblock %}
+
+{% block body %}
+     <ul>
+        {% for picture in pictures %}
+            <h1>{{ pictures.name }}</h1>
+            <div class="media">
+                <div class="media-body">
+                    <div class="jumbotron">
+                        <h2>{{ picture.place }}</h2>
+                    </div>
+                    <div class="jumbotron">
+                        <p>{{ picture.description }}</p>
+                    </div>
+                    <p><a class="btn btn-lg btn-success" role="button">Watch</a></p>
+                </div>
+            </div>
+      {% endfor %}
+    </ul>
+{% endblock %}
