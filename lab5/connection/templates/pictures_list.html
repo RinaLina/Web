@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %} {% endblock %}
+
+{% block navbar-links %} {% endblock %}
+
+{% block body %}
+    <h1>Pictures</h1>
+    <ul>
+        {% for picture in pictures %}
+            <div class="jumbotron">
+                <div class="media-left media-bottom">
+                    <a href="#">
+                        <h1 class="label label-default" alt="{{ picture.name }}"></h1>
+                    </a>
+                </div>
+                <div class="media-body">
+                    <h2>{{ picture.name }}</h2>
+                    <p><span class="label label-default">{{ picture.place }}</span></p>
+                    <p>{{ picture.description }}</p>
+                    <p><a class="btn btn-primary btn-lg" href="pictures/{{ picture.id }}" role="button">See more</a></p>
+                </div>
+            </div>
+        {% endfor %}
+    </ul>
+{% endblock %}
